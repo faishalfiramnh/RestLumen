@@ -17,4 +17,5 @@ $router->get('/', function () use ($router) {
 
 $router->get('/API', 'GpsController@index');
 $router->post('/API-tambah', 'GpsController@create');
-$router->put('/API-edit', 'GpsController@edit');
+$router->put('/API-edit/{id}', 'GpsController@edit');
+$router->delete('/API-delete{id}', 'GpsController@delete');

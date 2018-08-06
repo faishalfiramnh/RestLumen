@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use models\lokasi;
+use App\Flight;
 use Laravel\Lumen\Routing\Controller as BaseController;
 use DB;
 use Illuminate\Http\Request;
@@ -9,8 +10,17 @@ class GpsController extends BaseController
 {
     public function index()
     {
+      // $lokasi = lokasi::all();
+      // return response()->json($lokasi);
+
         $data = DB::table('lokasi')->get();
         return $data;
+    }
+
+    public function show($id)
+    {
+       $lokasi = lokasi::find($id);
+       return response()->json($lokasi);
     }
 
     public function create(Request $request)
@@ -29,24 +39,28 @@ class GpsController extends BaseController
       return $res;
     }
 
-    // public function update(Request $request)
-    // {
-    //   $isi = DB:table('lokasi')->update($id);
-    //   // $isi = lokasi::find($id); //objes kls  tidak boleh sama dengan nama tabel
-    // 	$isi->namaTempat = $request->namaTempat;
-    // 	$isi->latitude = $request->latitude;
-    // 	$isi ->longlitude = $request ->longlitude;
-    // 	$isi->save();
-    //
-    //   if($isi){
-    //     $pp['sucess']= true;
-    //     $pp['message']= "data tersimpan";
-    //   }
-    //   else {
-    //     $pp['sucess']= false;
-    //     $pp['message']="gagal";
-    //   }
-    // 	return $pp;
-    //
-    // }
+    public function edit(Request $request, $id)
+    {
+        $input = $request->all();
+      $lokasi =DB::table('lokasi')->update($input);
+			$lokasi->namaTempat = $request->input('namaTempat');
+      $lokasi->latitude = $request->input('latitude');
+      $lokasi->longlitude = $request->input('longlitude');
+      $lokasi->save();
+      return response()->json($lokasi);
+
+    }
+
+    public function delete($id)
+    {
+      $lokasi = lokasi::find($id);
+      $lokasi->delete();
+      return response()->json('lokasi removed successfully');
+
+      // lokasi::destroy($id);
+      // return response()->json(['message' => 'Successfully Deleted']);
+
+    }
+
+
 }

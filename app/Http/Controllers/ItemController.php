@@ -17,7 +17,7 @@ class ItemController extends Controller {
         return response()->json($item);
     }
 
-    public function store(Request $req){
+    public function create(Request $req){
         $item = Item::create($req->all())->id_item;
         return response()->json(['Data' => $item , 'Messages'=>'Successfully Saved']);
     }
@@ -25,7 +25,7 @@ class ItemController extends Controller {
     public function update(Request $req,$id){
         Item::find($id)->update($req->all());
         return response()->json([
-            'Messages' => 'Successfully Updated :D',
+            'Messages' => 'Successfully Updated',
             'Data' => Item::find($id)
         ]);
     }

@@ -13,10 +13,12 @@ class CreateItem extends Migration
      */
     public function up()
     {
-        Schema::create('item', function(Blueprint $table){
-            $table->increments('id_item');
-            $table->string('name');
-            $table->string('description');
+        Schema::create('lokasi', function(Blueprint $table){
+            $table->increments('id_lokasi');
+            $table->string('namaTempat');
+            $table->float('latitude');
+            $table->float('longlitude');
+
             $table->timestamps();
         });
     }

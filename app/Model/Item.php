@@ -5,8 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model {
 
-    protected $primaryKey = 'id_item';
-    protected $table = 'item';
-    protected $fillable = ['name','description'];
+    protected $primaryKey = 'id_lokasi';
+    protected $table = 'lokasi';
+    protected $fillable = ['namaTempat','latitude','longlitude'];
 
 }

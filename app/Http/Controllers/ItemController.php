@@ -30,7 +30,7 @@ class ItemController extends Controller {
         ]);
     }
 
-    public function destroy($id){
+    public function delete($id){
         Item::destroy($id);
         return response()->json(['message' => 'Successfully Deleted']);
     }

@@ -11,7 +11,7 @@
 |
 */
 
-$router->get('/', function () use ($router) {
+$router->get('/',['middleware' => 'cors'], function () use ($router) {
     return $router->app->version();
 });
 

@@ -19,7 +19,8 @@ class ItemController extends Controller {
 
     public function create(Request $req){
         $item = Item::create($req->all())->id_item;
-        return response()->json(['Data' => $item , 'Messages'=>'Successfully Saved']);
+        // dd($iten);
+        return response()->json(['Messages'=>'Successfully Saved']);
     }
 
     public function update(Request $req,$id){

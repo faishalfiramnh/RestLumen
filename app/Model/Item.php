@@ -7,6 +7,6 @@ class Item extends Model {
 
     protected $primaryKey = 'id_lokasi';
     protected $table = 'lokasi';
-    protected $fillable = ['namaTempat','latitude','longlitude'];
+    protected $fillable = ['name','latitude','longlitude'];
 
 }

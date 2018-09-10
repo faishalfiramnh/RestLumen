@@ -15,9 +15,9 @@ class Lokasi extends Migration
     {
       Schema::create('lokasi', function(Blueprint $table){
           $table->increments('id');
-          $table->string('namaTempat');
-          $table->float('latitude');
-          $table->float('longlitude');
+          $table->string('name');
+          $table->double('latitude');
+          $table->double('longlitude');
           $table->timestamps();
       });
     }

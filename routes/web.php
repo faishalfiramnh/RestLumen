@@ -17,6 +17,7 @@ $router->get('/',['middleware' => 'cors'], function () use ($router) {
 
 $router->get('/item', 'ItemController@index');
 $router->post('/item', 'ItemController@create');
+// $router->get('/save', 'ItemController@create');
 $router->get('/item/{id}', 'ItemController@show');
 $router->put('/item/{id}', 'ItemController@update');
 $router->delete('/item/{id}', 'ItemController@delete');

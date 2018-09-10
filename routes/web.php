@@ -21,3 +21,7 @@ $router->post('/item', 'ItemController@create');
 $router->get('/item/{id}', 'ItemController@show');
 $router->put('/item/{id}', 'ItemController@update');
 $router->delete('/item/{id}', 'ItemController@delete');
+
+$router->get('/key', function() {
+    return str_random(32);
+});

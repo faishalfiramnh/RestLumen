@@ -17,5 +17,15 @@ Documentation for the framework can be found on the [Lumen website](http://lumen
 If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
 ## License
+## cara 
+1. git clone
+2. install commposer didalm projek
+3. masuk ke projek 
+4. buat nama databasenya dulu lalu
+5. pergi ke file .env
+6. php artisan migrate, setelah berhasil, 
+7. nyalahkan servernya 
+8. php -S localhost:8080 -t public 
+
 
 The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
